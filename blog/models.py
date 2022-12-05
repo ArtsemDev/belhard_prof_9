@@ -57,6 +57,14 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+    @property
+    def date(self) -> str:
+        return self.date_created.strftime('%d.%m.%y')
+
+    @property
+    def full_name(self):
+        return self.author.first_name + ' ' + self.author.last_name
+
     class Meta:
         db_table = 'blog_posts'
         verbose_name = 'пост'
