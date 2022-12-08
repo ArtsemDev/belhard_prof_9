@@ -23,3 +23,5 @@ urlpatterns = [
     path('manager/', manager.urls),
     path('blog/', include('blog.urls')),
 ]
+
+handler404 = 'blog.views.error404'
