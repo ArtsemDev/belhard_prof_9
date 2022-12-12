@@ -21,7 +21,7 @@ from blog.admin import manager
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('manager/', manager.urls),
-    path('blog/', include('blog.urls')),
+    path('', include('blog.urls')),
 ]
 
 handler404 = 'blog.views.error404'
